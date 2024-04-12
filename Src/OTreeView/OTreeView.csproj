@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net35;net40;net6.0-windows;net8.0-windows</TargetFrameworks>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Version>1.0.0</Version>
+    <Authors>Oleksii "OlekDes" Desiatnichenko</Authors>
+    <Description>Rearrangeable TreeView for Windows Forms</Description>
+    <PackageProjectUrl>https://github.com/olekdes/otreeview</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/olekdes/otreeview</RepositoryUrl>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- This is to allow the .NET Framework references to be machine-indepenedent so builds can happen without installing prerequisites -->
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
