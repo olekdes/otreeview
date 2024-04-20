@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneTreeView", "Examples\OneTreeView\OneTreeView.csproj", "{D56390AD-20CC-424E-A64B-1F8FD15729E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{D2928DE3-737D-4C1F-98A8-5FF0F9A3E565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{2AAF4EF1-0779-4E75-A5BD-07099098D8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AAF4EF1-0779-4E75-A5BD-07099098D8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AAF4EF1-0779-4E75-A5BD-07099098D8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56390AD-20CC-424E-A64B-1F8FD15729E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56390AD-20CC-424E-A64B-1F8FD15729E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56390AD-20CC-424E-A64B-1F8FD15729E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56390AD-20CC-424E-A64B-1F8FD15729E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D56390AD-20CC-424E-A64B-1F8FD15729E0} = {D2928DE3-737D-4C1F-98A8-5FF0F9A3E565}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4E7A004-9E75-45BA-8241-78FA84EA8584}
