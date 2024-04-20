@@ -203,9 +203,9 @@ namespace OlekDes {
       if (offset < 0) {
         var xNode = targetNode ?? Nodes[0];
         var yNode = xNode;
-        DrawPlaceholder(CreateGraphics(),
-          x0: xNode.Bounds.X - GetImageWidth(xNode.ImageIndex) - 8,
-          x1: xNode.Bounds.X + xNode.Bounds.Width + 8,
+        DrawLine(CreateGraphics(),
+          x0: xNode.Bounds.X - GetImageWidth(xNode.ImageIndex),
+          x1: xNode.Bounds.X + xNode.Bounds.Width,
           y: yNode.Bounds.Y);
       }
       else if (offset > 0) {
@@ -216,14 +216,14 @@ namespace OlekDes {
           ? targetNode.NextVisibleNode ?? xNode
           : GetLastViewNode();
         var yNode = targetNode ?? GetLastViewNode();
-        DrawPlaceholder(CreateGraphics(),
-          x0: xNode.Bounds.X - GetImageWidth(xNode.ImageIndex) - 8,
-          x1: Math.Max(xNode.Bounds.X + xNode.Bounds.Width, xNearNode.Bounds.X + xNearNode.Bounds.Width) + 8,
+        DrawLine(CreateGraphics(),
+          x0: xNode.Bounds.X - GetImageWidth(xNode.ImageIndex),
+          x1: Math.Max(xNode.Bounds.X + xNode.Bounds.Width, xNearNode.Bounds.X + xNearNode.Bounds.Width),
           y: yNode.Bounds.Y + yNode.Bounds.Height);
       }
       else {
-        DrawRightTriangle(CreateGraphics(),
-          x: targetNode.Bounds.X + targetNode.Bounds.Width + 6,
+        DrawPointer(CreateGraphics(),
+          x: targetNode.Bounds.X + targetNode.Bounds.Width,
           y: targetNode.Bounds.Y + targetNode.Bounds.Height / 2);
       }
     }
@@ -231,16 +231,14 @@ namespace OlekDes {
     private int GetImageWidth(int imageIndex) =>
       ImageList?.Images[imageIndex].Size.Width ?? 0;
 
-    private void DrawLeftTriangle(Graphics g, int x, int y) =>
-      g.FillPolygon(Brushes.Gray, new[] { new Point(x, y - 4), new Point(x, y + 4), new Point(x + 4, y), new Point(x + 4, y - 1), new Point(x, y - 5) });
+    private void DrawPointer(Graphics g, int x, int y) {
+      var brush = new SolidBrush(SystemColors.Highlight);
+      g.FillPolygon(brush, new[] { new Point(x + 6, y - 4), new Point(x + 6, y + 4), new Point(x + 2, y), new Point(x + 2, y - 1), new Point(x + 6, y - 5) });
+    }
 
-    private void DrawRightTriangle(Graphics g, int x, int y) =>
-      g.FillPolygon(Brushes.Gray, new[] { new Point(x, y - 4), new Point(x, y + 4), new Point(x - 4, y), new Point(x - 4, y - 1), new Point(x, y - 5) });
-
-    private void DrawPlaceholder(Graphics g, int x0, int x1, int y) {
-      DrawLeftTriangle(g, x0, y);
-      DrawRightTriangle(g, x1, y);
-      g.DrawLine(new Pen(Color.Gray, 2), new Point(x0, y), new Point(x1, y));
+    private void DrawLine(Graphics g, int x0, int x1, int y) {
+      var pen = new Pen(SystemColors.Highlight, 2);
+      g.DrawLine(pen, new Point(x0, y), new Point(x1, y));
     }
   }
 
