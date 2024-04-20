@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace Olekdes {
+namespace OlekDes {
 
   public class OTreeView : TreeView {
 
@@ -41,7 +41,7 @@ namespace Olekdes {
       var draggedNode = e.Data.GetData(typeof(TreeNode)) as TreeNode;
       var cursorPoint = PointToClient(new Point(e.X, e.Y));
       var targetNode = GetNodeAt(cursorPoint);
-      var canHaveChildren = CanHaveChildren(targetNode);
+      var canHaveChildren = CanHaveChildren?.Invoke(targetNode) ?? false;
       var cursorOffset = GetCursorOffset(targetNode, cursorPoint, canHaveChildren);
 
       if (!CanDrop(draggedNode, targetNode, cursorOffset))
@@ -79,7 +79,7 @@ namespace Olekdes {
       var draggedNode = e.Data?.GetData(typeof(TreeNode)) as TreeNode;
       var cursorPoint = PointToClient(new Point(e.X, e.Y));
       var targetNode = GetNodeAt(cursorPoint);
-      var canHaveChildren = CanHaveChildren(targetNode);
+      var canHaveChildren = CanHaveChildren?.Invoke(targetNode) ?? false;
       var cursorOffset = GetCursorOffset(targetNode, cursorPoint, canHaveChildren);
 
       if (this.draggedNode == draggedNode && this.targetNode == targetNode && this.cursorOffset == cursorOffset)
@@ -210,7 +210,7 @@ namespace Olekdes {
       }
       else if (offset > 0) {
         var xNode = targetNode != null
-          ? CanHaveChildren(targetNode) && targetNode.Nodes.Count > 0 ? targetNode.Nodes[0] : targetNode
+          ? CanHaveChildren?.Invoke(targetNode) ?? false && targetNode.Nodes.Count > 0 ? targetNode.Nodes[0] : targetNode
           : Nodes[0];
         var xNearNode = targetNode != null
           ? targetNode.NextVisibleNode ?? xNode
