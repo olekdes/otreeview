@@ -44,7 +44,7 @@ namespace OneTreeView {
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(300, 450);
       Controls.Add(treeView);
-      Name = "One Tree View";
+      Name = "MainForm";
       Text = "One Tree View";
       ResumeLayout(false);
     }
