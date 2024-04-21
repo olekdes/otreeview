@@ -2,7 +2,7 @@
 
 Rearrangeable TreeView for Windows Forms.
 
-![Example](https://github.com/olekdes/otreeview/blob/release/example.png?raw=true)
+![Example](https://github.com/olekdes/otreeview/blob/master/example.png?raw=true)
 
 ## Quick Start Example
 
