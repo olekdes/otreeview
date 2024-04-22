@@ -4,9 +4,9 @@
     <TargetFrameworks>net35;net40;net6.0-windows;net8.0-windows</TargetFrameworks>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Oleksii "OlekDes" Desiatnichenko</Authors>
-    <Description>Rearrangeable TreeView for Windows Forms</Description>
+    <Description>Rearrangeable TreeView for Windows Forms.</Description>
     <PackageProjectUrl>https://github.com/olekdes/otreeview</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
