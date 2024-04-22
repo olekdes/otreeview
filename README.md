@@ -4,6 +4,10 @@ Rearrangeable TreeView for Windows Forms.
 
 [![Nuget](https://img.shields.io/nuget/v/OTreeView)](https://www.nuget.org/packages/OTreeView)
 
+## Installation
+
+Install UIoC using Package Manager with the `Install-Package OTreeView` command or get it from the [NuGet.org](https://www.nuget.org/packages/OTreeView).
+
 ## Get Started
 
 ![Example](https://github.com/olekdes/otreeview/blob/master/example.png?raw=true)
