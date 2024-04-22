@@ -2,6 +2,8 @@
 
 Rearrangeable TreeView for Windows Forms.
 
+![Example](https://github.com/olekdes/otreeview/blob/master/example.png?raw=true)
+
 [![Nuget](https://img.shields.io/nuget/v/OTreeView)](https://www.nuget.org/packages/OTreeView)
 
 ## Installation
@@ -9,8 +11,6 @@ Rearrangeable TreeView for Windows Forms.
 Install OTreeView using Package Manager with the `Install-Package OTreeView` command or get it from the [NuGet.org](https://www.nuget.org/packages/OTreeView).
 
 ## Get Started
-
-![Example](https://github.com/olekdes/otreeview/blob/master/example.png?raw=true)
 
 ```cs
 // Use OTreeView control instead of regular TreeView
