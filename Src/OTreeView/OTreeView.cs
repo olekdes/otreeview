@@ -151,7 +151,7 @@ namespace OlekDes {
       if (draggedNode == null)
         return false;
 
-      // Can drop outside of nowhere
+      // Can't drop outside
       if (targetNode == null)
         return cursorOffset < 0 && (draggedNode.Parent != null || draggedNode.PrevNode != null)
           || cursorOffset > 0 && (draggedNode.Parent != null || draggedNode.NextNode != null);
@@ -179,7 +179,7 @@ namespace OlekDes {
       return true;
     }
 
-    private TreeNode GetLastViewNode(TreeNode node = null) {
+    private TreeNode GetLastVisibleNode(TreeNode node = null) {
 
       if (node == null)
         node = Nodes.Cast<TreeNode>().First(n => n.Parent == null && n.NextNode == null);
@@ -202,20 +202,21 @@ namespace OlekDes {
 
       if (offset < 0) {
         var xNode = targetNode ?? Nodes[0];
+        var xNearNode = targetNode?.PrevVisibleNode ?? xNode;
         var yNode = xNode;
         DrawLine(CreateGraphics(),
           x0: xNode.Bounds.X - GetImageWidth(xNode.ImageIndex),
-          x1: xNode.Bounds.X + xNode.Bounds.Width,
+          x1: Math.Max(xNode.Bounds.X + xNode.Bounds.Width, xNearNode.Bounds.X + xNearNode.Bounds.Width),
           y: yNode.Bounds.Y);
       }
       else if (offset > 0) {
         var xNode = targetNode != null
           ? CanHaveChildren?.Invoke(targetNode) ?? false && targetNode.Nodes.Count > 0 ? targetNode.Nodes[0] : targetNode
-          : Nodes[0];
+          : Nodes[Nodes.Count - 1];
         var xNearNode = targetNode != null
           ? targetNode.NextVisibleNode ?? xNode
-          : GetLastViewNode();
-        var yNode = targetNode ?? GetLastViewNode();
+          : GetLastVisibleNode();
+        var yNode = targetNode ?? GetLastVisibleNode();
         DrawLine(CreateGraphics(),
           x0: xNode.Bounds.X - GetImageWidth(xNode.ImageIndex),
           x1: Math.Max(xNode.Bounds.X + xNode.Bounds.Width, xNearNode.Bounds.X + xNearNode.Bounds.Width),
