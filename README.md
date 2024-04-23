@@ -4,7 +4,9 @@ Rearrangeable TreeView for Windows Forms.
 
 ![Example](https://github.com/olekdes/otreeview/blob/master/example.png?raw=true)
 
-[![Nuget](https://img.shields.io/nuget/v/OTreeView)](https://www.nuget.org/packages/OTreeView)
+[![License](https://img.shields.io/github/license/olekdes/otreeview.svg)](https://github.com/olekdes/uioc/blob/master/LICENSE)
+[![Nuget](https://img.shields.io/nuget/v/OTreeView)](https://www.nuget.org/packages/OTreeView) 
+[![NuGet](https://img.shields.io/nuget/dt/OTreeView.svg)](https://www.nuget.org/packages/OTreeView)
 
 ## Installation
 
