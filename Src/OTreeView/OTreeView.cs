@@ -168,11 +168,11 @@ namespace OlekDes {
       if (targetNode.NextNode == draggedNode && targetNode.Nodes.Count == 0 && cursorOffset > 0)
         return false;
 
-      // Can't drop to parent to it's current position
+      // Can't drop to parent to its current position
       if (targetNode == draggedNode.Parent && draggedNode.Parent.Nodes.IndexOf(draggedNode) == 0 && cursorOffset >= 0)
         return false;
 
-      // Can't drop parent to it's own child
+      // Can't drop parent to its own child
       if (IsChildOf(targetNode, draggedNode))
         return false;
 
