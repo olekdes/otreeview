@@ -12,7 +12,7 @@ namespace OlekDes {
     private int cursorOffset;
 
     public event NodeMovedEventHandler NodeMoved;
-    private void OnNodeMoved(TreeNode node) => NodeMoved?.Invoke(this, new NodeModedEventArgs() { Node = node });
+    private void OnNodeMoved(TreeNode node) => NodeMoved?.Invoke(this, new NodeMovedEventArgs() { Node = node });
     public CanHaveChildren CanHaveChildren { get; set; }
 
     public OTreeView() : base() {
@@ -243,11 +243,11 @@ namespace OlekDes {
     }
   }
 
-  public class NodeModedEventArgs : EventArgs {
+  public class NodeMovedEventArgs : EventArgs {
     public TreeNode Node { get; internal set; }
   }
 
-  public delegate void NodeMovedEventHandler(object sender, NodeModedEventArgs e);
+  public delegate void NodeMovedEventHandler(object sender, NodeMovedEventArgs e);
 
   public delegate bool CanHaveChildren(TreeNode node);
 }

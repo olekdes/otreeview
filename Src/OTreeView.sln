@@ -15,7 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneTreeView", "Examples\One
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{D2928DE3-737D-4C1F-98A8-5FF0F9A3E565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoTreeViews", "Examples\TwoTreeViews\TwoTreeViews.csproj", "{E13A6B0F-D92B-41F5-A230-68163E0E1F54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoTreeViews", "Examples\TwoTreeViews\TwoTreeViews.csproj", "{E13A6B0F-D92B-41F5-A230-68163E0E1F54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{C0C4A520-AFE9-4D7F-8DF2-EF6DA623E31D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{4D86EEA7-8917-44DF-BA6A-71A63F831E21}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\nuget.release.yml = ..\.github\workflows\nuget.release.yml
+		..\.github\workflows\tests.master.yml = ..\.github\workflows\tests.master.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +50,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{D56390AD-20CC-424E-A64B-1F8FD15729E0} = {D2928DE3-737D-4C1F-98A8-5FF0F9A3E565}
 		{E13A6B0F-D92B-41F5-A230-68163E0E1F54} = {D2928DE3-737D-4C1F-98A8-5FF0F9A3E565}
+		{C0C4A520-AFE9-4D7F-8DF2-EF6DA623E31D} = {0A99737F-8855-4A22-8A47-0E2C81577A79}
+		{4D86EEA7-8917-44DF-BA6A-71A63F831E21} = {C0C4A520-AFE9-4D7F-8DF2-EF6DA623E31D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B4E7A004-9E75-45BA-8241-78FA84EA8584}
